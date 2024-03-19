@@ -2,9 +2,9 @@ services:
   web:
     build: .
     ports:
-      - 9000:9000
+      - 9001:9000
     environment:
-      - USER=username
+      - USER=Pepa
     depends_on:
       - redis
     networks:
