@@ -46,7 +46,7 @@ class Handler(BaseHTTPRequestHandler):
                 """
                 Examples:<br>
                 <a href="/sum?numbers=1,2,5">/sum?numbers=1,2,5</a> for sum of numbers 1, 2 and 5<br>
-                <a href="/product?numbers=1,2,5">/sum?product=1,2,5</a> for product of numbers 1, 2 and 5
+                <a href="/product?numbers=1,2,5">/product?numbers=1,2,5</a> for product of numbers 1, 2 and 5
                 """.encode("utf-8"))
 
     def log_request(self, code='-', size='-'):
