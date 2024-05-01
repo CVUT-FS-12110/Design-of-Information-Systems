@@ -1,0 +1,15 @@
+@startuml
+
+component Generator
+component Serializer
+component Storage
+
+
+Generator - API1
+API1 - Serializer
+Serializer - API2
+API2 - Storage
+
+
+
+@enduml

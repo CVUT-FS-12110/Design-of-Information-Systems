@@ -1,0 +1,10 @@
+@startuml
+start
+:Run tests;
+if (Test passed) then (no)
+  :Abort the mission;
+else (yes)
+  :Deploy;
+endif
+stop
+@enduml

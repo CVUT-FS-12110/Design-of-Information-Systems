@@ -1,17 +1,21 @@
 @startuml
-[*] --> Open: Create
 
 state Open
+state Closed
+state Locked
 
-state Closed {
-    state Locked
-    [*] --> Locked: Lock
-    Locked --> [*]: Unlock
-}
+
+[*] --> Open: Insert
+
 
 Open --> Closed : Close
 Closed --> Open : Open
-Closed --> [*] : Destroy
-Open --> [*] : Destroy
+Closed --> Locked: Lock
+Locked --> Closed: Unlock
+
+Open --> [*] : Remove
+
+
+
 
 @enduml

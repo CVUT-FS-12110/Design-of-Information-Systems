@@ -1,0 +1,25 @@
+@startuml
+
+
+package "Nice Package" {
+  API -left- [Package component]
+  folder MyFolder
+}
+
+cloud "Nice cloud" {
+    component Adapter {
+        portin p1
+    }
+    database "Massive database" {
+      component Table {
+        portout p2
+      }
+    }
+    p1 -up- p2
+}
+
+Adapter -- API
+[Package component] -- MyFolder
+
+
+@enduml

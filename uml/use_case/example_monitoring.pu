@@ -1,0 +1,30 @@
+@startuml
+
+left to right direction
+
+actor User as U
+actor Sensor as S
+actor DataAnalysisSystem as DAS
+actor AlertSystem as AS
+actor ReportingSystem as RS
+
+rectangle "Environmental Monitoring System" {
+    usecase "View Data" as View
+    usecase "Analyze Data" as Analyze
+    usecase "Set Alerts" as SetAlerts
+    usecase "Generate Reports" as GenerateReports
+}
+
+U --> View
+U --> Analyze
+U --> SetAlerts
+U --> GenerateReports
+View <-- S
+Analyze <-- S
+SetAlerts <-- S
+Analyze <-- DAS
+GenerateReports <-- DAS
+SetAlerts <-- AS
+GenerateReports <-- RS
+
+@enduml

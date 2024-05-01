@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+
+actor User as U
+actor SmartDevice as SD
+actor SecuritySystem as SS
+actor EnergyManagementSystem as EMS
+actor NotificationSystem as NS
+
+rectangle "Home Automation System" {
+    usecase "User Authentication" as UA
+    usecase "Device Control" as DC
+    usecase "Scheduling and Automation" as SA
+    usecase "Energy Management" as EM
+    usecase "Security and Surveillance" as SSur
+    usecase "Notifications and Alerts" as NA
+}
+
+U --> UA
+U --> DC
+U --> SA
+U --> EM
+U --> SSur
+U --> NA
+
+UA --> SS : Authenticate
+DC --> SD : Control Devices
+SA --> SD : Schedule Automation
+EM --> EMS : Monitor Energy Usage
+SSur --> SS : Monitor Security
+NA --> NS : Send Notifications
+
+@enduml

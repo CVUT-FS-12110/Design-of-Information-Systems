@@ -1,0 +1,10 @@
+@startuml
+start
+fork
+  :Run test 1;
+fork again
+  :Run test 2;
+end merge
+:Deploy;
+stop
+@enduml

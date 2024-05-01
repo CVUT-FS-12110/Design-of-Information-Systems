@@ -1,0 +1,24 @@
+@startuml
+
+state BoilerStarted {
+    state BoilerFull
+    state BoilerEmpty
+    [*] -> BoilerFull
+    BoilerFull <-- BoilerEmpty
+    BoilerFull --> BoilerEmpty
+    BoilerEmpty -> [*]
+
+}
+state CoolerStarted
+state C1 <<choice>>
+
+[*] --> C1
+C1 --> BoilerStarted: t<5
+C1 --> CoolerStarted: t<30
+
+BoilerStarted --> [*]
+CoolerStarted --> [*]
+
+
+
+@enduml

@@ -1,19 +1,23 @@
 @startuml
+
 state Created : init variables
-state Pending : wait for signal
 state Started : compute data
 state Finished : store data
 state Error
+state C1 <<choice>>
+state C2 <<choice>>
 
-[*] --> Created: Created
-Created --> Pending: Finish init
-Pending --> Started: Start signal obtained
-Started --> Finished: Calculations finished
-Finished --> [*]: Deleted
-Created --> Error
-Pending --> Error
-Started --> Error
-Finished --> Error
+[*] --> Created: Creation
+Finished --> [*]: Deletion
+
+Created --> C1
+C1 --> Started
+C1 --> Error: error count > 0
+
+Started -->C2
+C2 --> Finished
+C2 --> Error: error count > 0
+
 Error --> [*]
 
 @enduml

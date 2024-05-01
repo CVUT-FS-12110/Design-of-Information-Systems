@@ -1,0 +1,22 @@
+@startuml
+
+node "Small computer" {
+    artifact main.py as M
+    artifact database_connector.py as DC
+}
+
+node "Big computer" {
+    artifact compute.py as C
+}
+
+node "Other computer" {
+    artifact sqlite.db as DB
+    artifact db_adapter.py as DA
+}
+
+DA -- DB
+M -right- C
+M -- DC
+DC -right- DA
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+
+title State diagram
+
+[*] --> State : action
+State --> [*] : action
+
+@enduml

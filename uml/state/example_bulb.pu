@@ -5,14 +5,13 @@
 state Broken
 state On
 state Off
-state BrokenDecision <<choice>>
+
 
 Off --> On: Switch on
 On --> Off: Switch off
 On --> Broken: Break
-Broken --> BrokenDecision
-BrokenDecision --> Off: Replace
-BrokenDecision --> [*]: Remove
+Broken --> [*]: Remove
+
 Off --> [*] : Remove
 
 @enduml

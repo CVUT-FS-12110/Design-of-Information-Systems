@@ -1,0 +1,13 @@
+@startuml
+|CPU|
+start
+:Import data;
+:Send data to GPU;
+|GPU|
+:Pre-process;
+:Process;
+|CPU|
+:Get results from GPU;
+:Export results;
+stop
+@enduml
