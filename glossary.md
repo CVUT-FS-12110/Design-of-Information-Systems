@@ -1,11 +1,14 @@
 # Thematic Glossary
 
-## Information
-Information
-Shanon Information
-Information Entropy
-Bit (Binary Digit)
-Nat (Natural Unit of Information)
+## Information & Information Systems
+
+- Information
+- Shanon Information
+- Information Entropy
+- Bit (Binary Digit)
+- Nat (Natural Unit of Information)
+- System
+- Information System
 
 ## General Knowledge
 
@@ -17,10 +20,7 @@ Nat (Natural Unit of Information)
 - API (Application programming interface)
 - Client, Server / *Klient, Server*
 
-## Introduction
 
-- Information / *Informace*
-- Information system / *Informační systém*
 
 ## UML
 
