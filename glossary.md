@@ -1,5 +1,12 @@
 # Thematic Glossary
 
+## Information
+Information
+Shanon Information
+Information Entropy
+Bit (Binary Digit)
+Nat (Natural Unit of Information)
+
 ## General Knowledge
 
 - JSON (JavaScript Object Notation)
