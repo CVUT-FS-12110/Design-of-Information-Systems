@@ -2,13 +2,13 @@
 
 ## Information & Information Systems
 
-- Information
+- Information / *Informace*
 - Shanon Information
-- Information Entropy
+- Information Entropy / *Entropie informace*
 - Bit (Binary Digit)
 - Nat (Natural Unit of Information)
-- System
-- Information System
+- System / *Systém*
+- Information System / *Informační systém*
 
 ## General Knowledge
 
