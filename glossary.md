@@ -10,14 +10,29 @@
 - System / *Systém*
 - Information System / *Informační systém*
 
-## Design Live Cycle
+## System Design Live Cycle
   
 - SDLC (System Design Life Cycle)
+- Control Objectives
+- Management Control Domains
 - Waterfall SDLC
 - Agile SDLC
+- DevOps SDLC
 - Continuous Development & Deployment
 - Continuous Integration & Continuous Delivery
 - Infrastructure as Code
+
+## UML
+
+- UML (Unified modeling language)
+- Class diagram
+- Sequence diagram
+- Entity–relationship diagram
+- Activity diagram
+- State machine diagram
+- Component diagram
+- Deployment diagram
+- Use-case diagram
 
 
 ## General Knowledge
@@ -31,15 +46,6 @@
 - Client, Server / *Klient, Server*
 
 
-
-## UML
-
-- UML (Unified modeling language)
-- Class diagram
-- Sequence diagram
-- Entity–relationship diagram
-- Activity diagram
-- State machine diagram
 
 ## Containerization
 
