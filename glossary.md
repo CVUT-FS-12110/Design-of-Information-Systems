@@ -1,6 +1,6 @@
 # Thematic Glossary
 
-## Information & Information Systems
+## Information
 
 - Information / *Informace*
 - Shanon Information
@@ -9,6 +9,16 @@
 - Nat (Natural Unit of Information)
 - System / *Systém*
 - Information System / *Informační systém*
+
+## Design Live Cycle
+  
+- SDLC (System Design Life Cycle)
+- Waterfall SDLC
+- Agile SDLC
+- Continuous Development & Deployment
+- Continuous Integration & Continuous Delivery
+- Infrastructure as Code
+
 
 ## General Knowledge
 
