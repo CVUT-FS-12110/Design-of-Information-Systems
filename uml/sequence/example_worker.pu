@@ -1,0 +1,20 @@
+@startuml
+Client -> Server ++ : assign task
+
+Server -> Worker **  : create
+deactivate Server
+
+
+Worker -> Server ++: fetch task
+activate Worker
+return
+
+Worker ->> Server: upload results A
+Worker ->> Server: upload results B
+Worker ->> Server: report finish
+deactivate Worker
+activate Server
+deactivate Server
+Server -> Worker !! : delete
+
+@enduml

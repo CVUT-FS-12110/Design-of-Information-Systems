@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+
+actor Customer
+actor "Production Machine" as Machine
+actor "Information Panel" as Panel
+
+rectangle "Production Facility" {
+  usecase "Create Order" as UA1
+  usecase "View my Orders" as UA2
+  usecase "Add Product to Order" as UA3
+  usecase "Finish Order" as UA4
+
+  usecase "Finish Product" as UC1
+  usecase "Update Order State" as UC2
+
+  usecase "View Open Orders" as UB1
+  usecase "List Order Products" as UB2
+}
+
+Customer --> UA1
+Customer --> UA2
+Customer --> UA3
+Customer --> UA4
+UB1 <-- Panel
+UB2 <-- Panel
+UC2 <-- Panel
+UB1 <-- Machine
+UB2 <-- Machine
+UC1 <-- Machine
+UC2 <-- Machine
+
+@enduml

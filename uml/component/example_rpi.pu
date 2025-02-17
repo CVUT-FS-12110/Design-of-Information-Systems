@@ -1,0 +1,33 @@
+@startuml
+
+component Storage
+component Server
+component Trigger
+component Indicator
+component Camera
+
+
+Camera - GIGE
+GIGE - RPI
+HTTP - Server
+
+
+component RPI {
+  portin gpio0
+  portout gpio1
+}
+
+RPI -- HTTP
+RPI - FTP
+
+Trigger -- gpio0
+gpio1 --> Indicator
+
+
+
+FTP - Storage
+
+
+
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+node "Server" {
+    artifact main.py as M
+    artifact database_connector.py as DC
+}
+
+node "Super computer" {
+    artifact compute.py as C
+}
+
+component "Database" as DB {
+}
+
+DC -right- DB
+M -right- C
+M -- DC
+
+
+@enduml

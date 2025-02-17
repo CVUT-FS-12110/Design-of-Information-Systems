@@ -1,0 +1,42 @@
+@startuml
+
+entity Client {
+    + id: int [PK]
+    --
+    name: String
+    contact: String
+}
+
+entity Order {
+    + id: int [PK]
+    --
+    status: OrderStatus
+    creationDate: Date
+    completionDate: Date
+}
+
+entity Product {
+    + id: int [PK]
+    --
+    name: String
+    state: ProductState
+    order_id: int [FK]
+}
+
+enum OrderStatus {
+    PENDING
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
+}
+
+enum ProductState {
+    ORDERED
+    READY
+    SHIPPED
+}
+
+Client ||--o{ Order : "places"
+Order ||--o{ Product : "contains"
+
+@enduml

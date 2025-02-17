@@ -1,0 +1,38 @@
+@startuml
+
+class User {
+    - name: String
+    + login()
+    + logout()
+}
+
+class Client {
+    - contact: String
+    + create_user()
+}
+
+class Administrator {
+    + create_order()
+}
+
+
+class Order {
+    - client: Client
+    - status: OrderStatus
+    - creationDate: Date
+    - completionDate: Date
+}
+
+class Product {
+    - order: Order
+    - name: String
+}
+
+
+User <|-- Client
+User <|--  Administrator
+
+Client "1" -- "*" Order : has orders
+Order "1" -- "*" Product : contains products
+
+@enduml
