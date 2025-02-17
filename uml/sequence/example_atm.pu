@@ -1,0 +1,13 @@
+@startuml
+
+actor Customer
+participant ATM
+participant Bank
+
+Customer -> ATM: Request cash withdrawal
+ATM -> Bank: Validate withdrawal request
+Bank --> ATM: Confirmation to proceed
+ATM -> Bank: Withdraw cash
+Bank --> ATM: Authorization to dispense cash
+ATM --> Customer: Dispense cash
+@enduml

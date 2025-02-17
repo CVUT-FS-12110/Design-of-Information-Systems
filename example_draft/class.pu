@@ -1,0 +1,48 @@
+@startuml
+
+class User {
+    - name: String
+}
+
+class Client {
+    - contact: String
+}
+
+class Machine {}
+
+class Administrator {}
+
+
+class Order {
+    - status: OrderStatus
+    - creationDate: Date
+    - completionDate: Date
+}
+
+class Product {
+    - name: String
+    - order: Order
+    - state: ProductState
+}
+
+enum OrderStatus {
+    PENDING
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
+}
+
+enum ProductState {
+    ORDERED
+    READY
+    SHIPPED
+}
+
+User <|-- Client
+User <|-- Machine
+User <|--  Administrator
+
+Client "1" -- "*" Order : has orders
+Order "1" -- "*" Product : contains products
+
+@enduml

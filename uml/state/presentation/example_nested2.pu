@@ -1,0 +1,18 @@
+@startuml
+state Secure {
+  state Idle {
+  }
+  state Disconnected {
+  }
+}
+
+state Vulnerable {
+  state ImportingData {
+  }
+}
+
+[*] --> Idle
+Idle --> ImportingData
+ImportingData -left-> Disconnected
+Disconnected -> [*]
+@enduml

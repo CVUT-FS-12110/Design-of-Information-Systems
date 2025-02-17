@@ -1,0 +1,31 @@
+@startuml
+
+title "Web browser request"
+
+participant Browser
+participant Server
+participant Database
+
+
+activate Browser
+Browser -> Server: request index.html
+activate Server
+Browser -> Server: request favicon
+activate Server
+Server -->> Browser: return favicon
+deactivate Server
+
+Server -> Server: build html
+activate Server
+Server -> Database: fetch user data
+activate Database
+Database -->> Server: user data
+deactivate Database
+deactivate Server
+Server -->> Browser: return index.html
+deactivate Server
+
+Browser -> Server ++: request static files
+return static files
+
+@enduml
