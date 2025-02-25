@@ -4,7 +4,7 @@ class User {
     - name: String
 }
 
-class Client {
+class Customer {
     - contact: String
 }
 
@@ -16,7 +16,6 @@ class Administrator {}
 class Order {
     - status: OrderStatus
     - creationDate: Date
-    - completionDate: Date
 }
 
 class Product {
@@ -26,23 +25,22 @@ class Product {
 }
 
 enum OrderStatus {
+    CREATED
     PENDING
     IN_PROGRESS
     COMPLETED
-    CANCELLED
 }
 
 enum ProductState {
     ORDERED
     READY
-    SHIPPED
 }
 
-User <|-- Client
+User <|-- Customer
 User <|-- Machine
 User <|--  Administrator
 
-Client "1" -- "*" Order : has orders
+Customer "1" -- "*" Order : has orders
 Order "1" -- "*" Product : contains products
 
 @enduml

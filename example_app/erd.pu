@@ -1,6 +1,6 @@
 @startuml
 
-entity Client {
+entity Customer {
     + id: int [PK]
     --
     name: String
@@ -12,7 +12,6 @@ entity Order {
     --
     status: OrderStatus
     creationDate: Date
-    completionDate: Date
 }
 
 entity Product {
@@ -24,19 +23,18 @@ entity Product {
 }
 
 enum OrderStatus {
+    CREATED
     PENDING
     IN_PROGRESS
     COMPLETED
-    CANCELLED
 }
 
 enum ProductState {
     ORDERED
     READY
-    SHIPPED
 }
 
-Client ||--o{ Order : "places"
+Customer ||--o{ Order : "places"
 Order ||--o{ Product : "contains"
 
 @enduml
