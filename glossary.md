@@ -22,12 +22,18 @@
 - Continuous Integration & Continuous Delivery
 - Infrastructure as Code
 
+## Entity-relation modeling
+
+- Entity-relation modeling
+- Entity–relation diagram
+- Primary key
+- Foreign key
+
 ## UML
 
 - UML (Unified modeling language)
 - Class diagram
 - Sequence diagram
-- Entity–relationship diagram
 - Activity diagram
 - State machine diagram
 - Component diagram
