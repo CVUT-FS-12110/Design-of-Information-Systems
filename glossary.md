@@ -24,6 +24,7 @@
 
 ## Entity-relation modeling
 
+- SQL (Structured Query Language)
 - Entity-relation modeling
 - Entity–relation diagram
 - Primary key
@@ -40,14 +41,18 @@
 - Deployment diagram
 - Use-case diagram
 
+## Version Control, Git
+- Version Control System / *Verzovací systém*
+- Git
+- Git commands: push, pull, merge, commit
+- Fork
+- Branch
+- Repository
 
 ## General Knowledge
 
 - JSON (JavaScript Object Notation)
 - YAML (Yet Another Markup Language)
-- SQL (Structured Query Language)
-- Version Control System / *Verzovací systém*
-- Git 
 - API (Application programming interface)
 - Client, Server / *Klient, Server*
 
