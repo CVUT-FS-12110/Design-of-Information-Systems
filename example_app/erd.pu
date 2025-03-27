@@ -1,10 +1,19 @@
 @startuml
 
+entity User {
+    + id: int [PK]
+    --
+    name: String
+    contact: String
+}
+
+
 entity Customer {
     + id: int [PK]
     --
     name: String
     contact: String
+    user_id: int [FK]
 }
 
 entity Order {
@@ -34,6 +43,7 @@ enum ProductState {
     READY
 }
 
+User ||-|| Customer
 Customer ||--o{ Order : "places"
 Order ||--o{ Product : "contains"
 

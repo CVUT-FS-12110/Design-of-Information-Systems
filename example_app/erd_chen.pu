@@ -1,0 +1,32 @@
+@startchen
+left to right direction
+
+
+
+entity Customer {
+
+}
+
+entity Order {
+
+}
+
+entity Product {
+
+}
+
+relationship Places {
+
+}
+
+relationship Contains {
+
+}
+
+Customer -N- Places
+Places -1- Order
+
+Order -N- Contains
+Contains -1- Product
+
+@endchen

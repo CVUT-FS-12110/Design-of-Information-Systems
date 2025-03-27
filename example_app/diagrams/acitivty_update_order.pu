@@ -1,0 +1,25 @@
+@startuml
+start
+
+:User sends update order request;
+
+:Validate user;
+if (User valid?) then (Yes)
+    :Check if order exists for customer;
+    if (Order exists?) then (Yes)
+        :Check if order has at least one product;
+        if (Order has product?) then (Yes)
+            :Update order status to 'pending';
+            :Send positive response to user;
+        else (No)
+            :Reject request (Order cannot be empty);
+        endif
+    else (No)
+        :Reject request (Order not found);
+    endif
+else (No)
+    :Reject request (Invalid user);
+endif
+
+stop
+@enduml

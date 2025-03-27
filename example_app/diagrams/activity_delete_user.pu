@@ -1,0 +1,15 @@
+@startuml
+start
+
+:User sends delete user request;
+
+:Check if user exists;
+if (User exists?) then (Yes)
+    :Delete user;
+    :Send success response;
+else (No)
+    :Send failure response (User not found);
+endif
+
+stop
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+start
+
+:User sends create order request;
+:Create order;
+:Send success response;
+
+stop
+@enduml
