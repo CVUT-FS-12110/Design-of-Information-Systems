@@ -54,9 +54,29 @@
 - JSON (JavaScript Object Notation)
 - YAML (Yet Another Markup Language)
 - API (Application programming interface)
+- OpenAPI
 - Client, Server / *Klient, Server*
 
-
+## Networks and Cybersecurity
+- Packet
+- VPN (Virtual Private Network)
+- Firewall
+- TCP/IP protokol
+- IP address
+- MAC address
+- DNS (Domain Name System)
+- DHCP (Dynamic Host Configuration Protocol)
+- HTTP (Hypertext Transfer Protocol)
+- HTTPS (HyperText Transfer Protocol Secure)
+- SSL/TLS certificates
+- Authentification vs Authorization
+- IP/MAC/DNS Spoofing
+- DoS / DDoS ((Distributed) Denial of Service)
+- MitM (Man-in-the-Middle)
+- Phishing
+- SQL Injection
+- Cross-site Scripting (XSS)
+- Cross-site Request Forgery (CSRF)
 
 ## Containerization
 
