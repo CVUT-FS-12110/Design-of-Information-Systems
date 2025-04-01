@@ -1,0 +1,15 @@
+@startuml
+
+state "CREATED" as Created
+state "PENDING" as Pending
+state "IN_PROGRESS" as InProgress
+state "COMPLETED" as Completed
+
+[*] --> Created: Customer create order
+Created --> Pending : Customer finish order
+Pending --> InProgress : Production started
+InProgress -> Pending : Machine failed
+InProgress --> Completed : All products ready
+Completed --> [*]
+
+@enduml

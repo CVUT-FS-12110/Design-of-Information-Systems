@@ -1,0 +1,10 @@
+@startuml
+
+state "ORDERED" as Ordered
+state "READY" as Ready
+
+[*] --> Ordered: Created by customer
+Ordered --> Ready : Production completed
+Ready --> [*]
+
+@enduml
