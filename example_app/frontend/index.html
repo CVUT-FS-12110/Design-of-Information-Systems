@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order Management</title>
+</head>
+<body>
+    <h1>Order Management</h1>
+
+    <h2>Select Customer</h2>
+    <label for="customer_id">Customer ID:</label>
+    <input type="number" id="customer_id" name="customer_id" value="1" required>
+    <button onclick="loadOrders()">Set Customer</button>
+
+    <h2>Customer's Orders</h2>
+    <ul id="orders-list"></ul>
+
+    <h2>Create New Order</h2>
+    <button onclick="createOrder()">Create Order</button>
+
+    <h2>Add Product to Order</h2>
+    <form id="product-form">
+        <label for="order_id">Select Order:</label>
+        <select id="order_id" name="order_id" required></select>
+        <br>
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required>
+        <br>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let selectedCustomer = 1;
+
+        function loadOrders() {
+            selectedCustomer = document.getElementById('customer_id').value;
+            fetch(`${API_URL}/orders`)
+                .then(response => response.json())
+                .then(orders => {
+                    const ordersList = document.getElementById('orders-list');
+                    const orderSelect = document.getElementById('order_id');
+                    ordersList.innerHTML = '';
+                    orderSelect.innerHTML = '';
+
+                    orders.filter(order => order.customer_id == selectedCustomer).forEach(order => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `Order ID: ${order.id}, State: ${order.state}`;
+
+                        if (order.state === 'CREATED') {
+                            const btn = document.createElement('button');
+                            btn.textContent = "Set In Progress";
+                            btn.onclick = () => updateOrder(order.id);
+                            li.appendChild(btn);
+
+                            // Only pending orders appear in the "Add Product" dropdown
+                            const option = document.createElement('option');
+                            option.value = order.id;
+                            option.textContent = `Order ${order.id}`;
+                            orderSelect.appendChild(option);
+                        }
+
+                        const productList = document.createElement('ul');
+                        li.appendChild(productList);
+                        ordersList.appendChild(li);
+
+                        // Fetch and display products for each order
+                        loadProducts(order.id, productList);
+                    });
+                });
+        }
+
+        function loadProducts(orderId, productList) {
+            fetch(`${API_URL}/orders/${orderId}/products`)
+                .then(response => response.json())
+                .then(products => {
+                    productList.innerHTML = ''; // Clear previous products
+                    products.forEach(product => {
+                        const productItem = document.createElement('li');
+                        productItem.textContent = `${product.product_name} (State: ${product.state})`;
+                        productList.appendChild(productItem);
+                    });
+                });
+        }
+
+        function createOrder() {
+            fetch(`${API_URL}/orders`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ customer_id: selectedCustomer })
+            })
+            .then(response => response.json())
+            .then(() => loadOrders());
+        }
+
+        function updateOrder(orderId) {
+            fetch(`${API_URL}/orders/${orderId}?state=PENDING`, { method: 'PUT' })
+                .then(() => loadOrders());
+        }
+
+        document.getElementById('product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const orderId = document.getElementById('order_id').value;
+            const productName = document.getElementById('product_name').value;
+
+            fetch(`${API_URL}/products`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ order_id: Number(orderId), product_name: productName, state: 'ORDERED' })
+            })
+            .then(() => loadOrders());
+        });
+
+    </script>
+</body>
+</html>
