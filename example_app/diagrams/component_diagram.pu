@@ -1,0 +1,34 @@
+@startuml
+' Subsystem: Backend (API + DB)
+package "FactoryBackendSubsystem" {
+    component "FactoryManagementAPI\n(FastAPI Container)" as API
+    component "FactoryDB\n(PostgreSQL Container)" as DB
+
+    interface "DB Port 5432" as DBPortInternal
+    API -- DBPortInternal : Connects to
+    DBPortInternal -- DB
+}
+
+' Exposed HTTP Interface from API
+interface "HTTP API\n(REST)" as HTTPAPI
+API -up- HTTPAPI
+
+' Subsystem: Factory machines
+package "FactoryMachines" {
+    component "Machine1\n(Factory Equipment)" as Machine1
+    component "Machine2\n(Factory Equipment)" as Machine2
+
+    Machine1 -d- HTTPAPI
+    Machine2 -d- HTTPAPI
+}
+
+
+' External Clients
+component "FactoryWebUI\n(HTTP Server Container)" as Frontend
+component "VisualizationApp\n(Local Desktop App)" as Desktop
+
+
+' All external clients use the same HTTP API
+Frontend -left- HTTPAPI
+Desktop -right- HTTPAPI
+@enduml
