@@ -80,5 +80,53 @@
 
 ## Containerization
 
+- Virtualization
+- Containerization
 - Docker
-- Container / *Kontejner*
+- Container
+- Image
+- file `Dockerfile`
+- file `docker-compose.yaml`
+- command `docker build`
+- command `docker run`
+- docker `network`
+- docker `volume`
+
+
+## Architectures and SW development
+
+- Monolithic architecture
+- Service-Oriented Architecture
+- Microservices architecture
+- Serverless architecture
+- Event-Driven Architecture
+- Cold start latency
+
+- Horizontal scaling vs Vertical scaling
+- High availability
+- Redundancy
+- Load balancing
+- Caching
+
+- DevOps (software development and operations)
+- CI/CD (Continuous Integration and Continuous Delivery)
+- IaC (infrastructure as code)
+- GitOps
+- Kubernetes
+- Declarative vs imperative configuration
+
+## Software testing
+
+- Unit Testing
+- Integration Testing
+- System Testing
+- Acceptance Testing
+- Regression Testing
+- Smoke Testing
+- Penetration Testing
+- Performance Testing
+- Static testing 
+- Dynamic testing 
+- Passive testing
+
+
