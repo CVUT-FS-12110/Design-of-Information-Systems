@@ -33,6 +33,9 @@
 ## UML
 
 - UML (Unified modeling language)
+- Textual requirements analysis
+- Class diagram synthesis (from textual specification)
+- NLP - nature language processing
 - Class diagram
 - Sequence diagram
 - Activity diagram
